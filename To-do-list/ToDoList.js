@@ -1,6 +1,7 @@
 const ITEMS_CONTAINER = document.getElementById('items');
 const ITEM_TEMPLATE = document.getElementById('itemTemplate');
 const ADD_BUTTON = document.getElementById('add');
+const DELETE_BUTTON = document.getElementById('delete');
 
 let items = getItems();
 
@@ -55,6 +56,14 @@ function refreshList() {
 ADD_BUTTON.addEventListener("click", () => {
     addItem();
 });
-
-
+DELETE_BUTTON.addEventListener("click", () => {
+    // const removeItems = ITEMS_CONTAINER.querySelectorAll('.item');
+    // removeItems.remove(removeItems.firstchild);
+    ITEMS_CONTAINER.remove();
+    localStorage.clear();
+    location.reload();
+    // var g = document.createElement('div');
+    // g.setAttribute("id", "items");
+    // document.body.append(g);
+});
 refreshList();
